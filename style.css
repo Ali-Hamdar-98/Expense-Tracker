@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color:azure;
+  }
+  
+  h1, h2 {
+    text-align: center;
+    background-color: #dce9f5;
+    border: #000000 solid 1px;
+  }
+  
+  .inputSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 100px;
+  }
+  
+  .inputSection label {
+    font-weight:600;
+    margin: 10px;
+    width: 90px;
+  }
+
+  .inputSection input{
+    width: 200px;
+  }
+  
+  .inputSection button {
+    padding: 10px 20px;
+    background-color:#5f97af;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 5%;
+  }
+  
+ 
