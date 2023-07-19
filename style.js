@@ -58,7 +58,7 @@ $(document).ready(function() {
         $("#totalAmount").text(totalAmount.toFixed(2));
 
         expenses.splice(index, 1);
-        updateTable();
+        $("#expneseTableBody").find("tr").eq(index).remove();
     }
 
     function showPopupAlert(message) {
