@@ -24,7 +24,30 @@ $(document).ready(function() {
 
         expenses.push({ category, amount, date });
 
+        updateTable();
+
+       
     });
+
+    function updateTable() {
+        const newRow = $("<tr>");
+        const categoryCell = $("<td>").text(expenses[expenses.length - 1].category);
+        const amountCell = $("<td>").text(expenses[expenses.length - 1].amount.toFixed(2));
+        const dateCell = $("<td>").text(expenses[expenses.length - 1].date);
+        const deleteCell = $("<td>");
+        const deleteBtn = $("<button>").text('Delete').addClass('delete');
+
+        deleteBtn.click(function() {
+            const index = $(this).closest("tr").index();
+            deleteExpense(index);
+        });
+
+        deleteCell.append(deleteBtn);
+        newRow.append(categoryCell, amountCell, dateCell, deleteCell);
+        $("#expneseTableBody").append(newRow);
+
+    }
+
     function showPopupAlert(message) {
         $("#popupMessage").text(message);
         $("#popup").fadeIn();

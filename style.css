@@ -41,7 +41,7 @@ body {
     margin-left: 5%;
   }
   
-  #add,#popupClose:hover{
+  #add:hover{
     background-color: #446a7a;
   }
   .expensesList {
@@ -107,5 +107,9 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+#popupClose:hover{
+  background-color: #446a7a;
 }
 
