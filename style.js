@@ -26,7 +26,9 @@ $(document).ready(function() {
 
         updateTable();
 
-       
+        $("#category").val('');
+        $("#amount").val('');
+        $("#date").val('');
     });
 
     function updateTable() {
@@ -46,6 +48,17 @@ $(document).ready(function() {
         newRow.append(categoryCell, amountCell, dateCell, deleteCell);
         $("#expneseTableBody").append(newRow);
 
+        totalAmount += expenses[expenses.length - 1].amount;
+        $("#totalAmount").text(totalAmount.toFixed(2));
+    }
+
+    function deleteExpense(index) {
+        const deletedExpense = expenses[index];
+        totalAmount -= deletedExpense.amount;
+        $("#totalAmount").text(totalAmount.toFixed(2));
+
+        expenses.splice(index, 1);
+        updateTable();
     }
 
     function showPopupAlert(message) {
